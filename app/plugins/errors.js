@@ -7,9 +7,9 @@ module.exports = {
       server.ext('onPreResponse', (request, h) => {
         const response = request.response
 
-        console.log(response)
 
         if (response.isBoom) {
+          console.log(response)
           const statusCode = response.output.statusCode
 
           if (statusCode === 401) {
