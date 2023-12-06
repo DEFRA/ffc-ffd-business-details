@@ -26,9 +26,8 @@ const createServer = async () => {
   await server.register(require('./plugins/errors'))
   await server.register(require('./plugins/crumb'))
   await server.register(require('./plugins/logging'))
-  if (serverConfig.isDev) {
-    await server.register(require('blipp'))
-  }
+
+  await server.register(require('blipp'))
 
   return server
 }
