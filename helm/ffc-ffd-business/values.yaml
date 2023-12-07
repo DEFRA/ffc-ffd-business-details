@@ -33,6 +33,7 @@ container:
   limitMemory: 100Mi
   limitCpu: 100m
   port: 3003
+  authHost: ffc-ffd-auth
 
 livenessProbe:
   path: /business/healthz

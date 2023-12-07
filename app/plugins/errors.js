@@ -7,13 +7,11 @@ module.exports = {
       server.ext('onPreResponse', (request, h) => {
         const response = request.response
 
-
         if (response.isBoom) {
-          console.log(response)
           const statusCode = response.output.statusCode
 
           if (statusCode === 401) {
-            return h.redirect(`${serverConfig.publicGatewayHost}/auth/sign-in?redirect=${request.url.pathname}`)
+            return h.redirect(`${serverConfig.gatewayHost}/auth/sign-in?redirect=${request.url.pathname}`)
           }
 
           if (statusCode === 403) {
